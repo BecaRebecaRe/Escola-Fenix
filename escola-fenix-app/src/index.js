@@ -1,18 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./Main";
+import RegistroPresenca from "./pages/registroPresenca";
+import Relatorios from "./pages/relatorios";
 import { ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App';
-import RegistroPresenca from './pages/registroPresenca';
-import Relatorios from './pages/relatorios';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <ChakraProvider>
-      <Router>
-        <RegistroPresenca />
-      </Router>
-    </ChakraProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+          <Route index element={<Main />} />
+          <Route path="/registroPresenca" element={<RegistroPresenca />} />
+          <Route path="/relatorios" element={<Relatorios />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <ChakraProvider>
+    <App />
+  </ChakraProvider>
 );

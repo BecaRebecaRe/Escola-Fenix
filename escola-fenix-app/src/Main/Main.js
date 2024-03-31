@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Heading, SimpleGrid, Stat, StatLabel, StatNumber, StatHelpText, Flex, Spacer, Text, List, ListItem, Link } from '@chakra-ui/react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import Header from './components/header';
+import Header from '../components/header';
 
-function App() {
+function Main() {
   // Dados de exemplo para exibir no dashboard
   const totalAlunos = 250;
   const totalProfessores = 20;
@@ -87,4 +87,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
