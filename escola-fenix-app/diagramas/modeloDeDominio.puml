@@ -1,0 +1,65 @@
+@startuml
+class Aluno {
+  # id: int
+  nome: string
+  totalFaltas: int
+  * turmaId: int
+}
+
+class Turma {
+  # id: int
+  ano: int
+  * professorId: int
+}
+
+class Falta {
+  # id: int
+  * alunoId: int
+  data: Date
+}
+
+class Professor {
+  # id: int
+  nome: string
+  * disciplinaId: int
+  * turmaId: int
+}
+
+class Relatorio {
+  # id: int
+  tipo: string
+  dataGeracao: Date
+  dados: string
+}
+
+class Gestor {
+  # id: int
+  nome: string
+  * relatorioId: int
+}
+
+class Responsavel {
+  # id: int
+  nome: string
+  email: string
+}
+
+class Notificacao {
+  # id: int
+  * faltaId: int
+}
+
+class Disciplina {
+  # id: int
+  nome: string
+}
+
+Aluno "1" -- "N" Falta
+Turma "1" -- "N" Aluno
+Professor "1" -- "N" Turma
+Professor "1" -- "N" Relatorio
+Professor "1" -- "N" Disciplina
+Responsavel "1" -- "N" Notificacao
+Notificacao "1" -- "1" Falta
+Gestor "1" -- "N" Relatorio
+@enduml

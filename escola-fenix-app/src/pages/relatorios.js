@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Heading, Table, Thead, Tbody, Tr, Th, Td, Button, Icon, Input, Flex, Select} from '@chakra-ui/react';
-import { MdFileDownload } from 'react-icons/md';
+import { MdFileDownload, MdCancel } from 'react-icons/md';
 import Header from '../components/header';
 import TableHeader from '../components/tableHeader';
 import Filter from '../components/filter';
@@ -75,8 +75,8 @@ function Relatorios() {
                 <Td>{data}</Td>
                 <Td>{totalFaltas}</Td>
                 <Td>
-                  <Button leftIcon={<Icon as={MdFileDownload} />} colorScheme="red" variant="solid" size="sm">
-                    Teste
+                  <Button leftIcon={<Icon as={MdCancel} />} colorScheme="red" variant="solid" size="sm">
+                    Remover Falta
                   </Button>
                 </Td>
               </Tr>

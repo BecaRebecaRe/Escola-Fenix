@@ -1,13 +1,18 @@
-/* eslint-disable no-unused-vars */
-import * as React from 'react'
-import ReactDOM from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import { ChakraProvider } from '@chakra-ui/react'
+import RegistroPresenca from './pages/registroPresenca';
 import Relatorios from './pages/relatorios';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <ChakraProvider>
-    <Relatorios />
-  </ChakraProvider>
+ReactDOM.render(
+  <React.StrictMode>
+    <ChakraProvider>
+      <Router>
+        <RegistroPresenca />
+      </Router>
+    </ChakraProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );

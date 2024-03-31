@@ -1,0 +1,30 @@
+@startuml sequencia
+!theme aws-orange
+actor Professor
+actor Responsável
+participant Sistema
+participant BancoDeDados
+participant ServidorEmail
+
+Professor -> Sistema: Ver Dashboard
+Sistema --> Professor: Exibir Dashboard
+
+Professor -> Sistema: Registrar Falta
+Sistema -> BancoDeDados: Atualizar Dados de Falta
+
+Professor -> Sistema: Gerar Relatório
+Sistema -> BancoDeDados: Obter Dados de Faltas
+BancoDeDados --> Sistema: Dados de Faltas
+Sistema --> Professor: Baixar Relatório (Arquivo)
+
+Professor -> Sistema: Visualizar Registro de Faltas
+Sistema -> BancoDeDados: Obter Dados de Faltas
+BancoDeDados --> Sistema: Dados de Faltas
+Sistema --> Professor: Exibir Registro de Faltas
+
+Professor -> Sistema: Registrar Falta
+Sistema -> BancoDeDados: Atualizar Dados de Falta
+Sistema -> Sistema: Verificar Número de Faltas
+Sistema -> ServidorEmail: Enviar Notificação (Se exceder limite)
+ServidorEmail --> Responsável: Receber Notificação
+@enduml

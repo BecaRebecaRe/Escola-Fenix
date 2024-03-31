@@ -1,4 +1,6 @@
-import { Box, Flex, IconButton } from "@chakra-ui/react";
+import React from 'react';
+import { Box, Flex, IconButton, Link as ChakraLink } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -12,8 +14,43 @@ const Header = () => {
         color="white"
       >
         <Box>
-          <img src={require('../image/logo.png')} alt="Logo" width={200}/>
+          <img src={require('../image/logo.png')} alt="Logo" width={200} />
         </Box>
+        <Flex>
+          <ChakraLink
+            as={Link}
+            to="/"
+            mr="3rem"
+            color="white"
+            textTransform="uppercase"
+            _hover={{ textDecoration: 'underline' }}
+            _focus={{ outline: 'none' }}
+          >
+            Dashboard
+          </ChakraLink>
+          <ChakraLink
+            as={Link}
+            to="/registroPresenca"
+            mr="3rem"
+            color="white"
+            textTransform="uppercase"
+            _hover={{ textDecoration: 'underline' }}
+            _focus={{ outline: 'none' }}
+          >
+            Registro de Presença
+          </ChakraLink>
+          <ChakraLink
+            as={Link}
+            to="/relatorios"
+            mr="10rem"
+            color="white"
+            textTransform="uppercase"
+            _hover={{ textDecoration: 'underline' }}
+            _focus={{ outline: 'none' }}
+          >
+            Relatórios
+          </ChakraLink>
+        </Flex>
         <IconButton
           aria-label="Menu"
           icon={

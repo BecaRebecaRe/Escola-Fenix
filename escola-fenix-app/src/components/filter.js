@@ -57,6 +57,7 @@ function Filter() {
           <FormLabel htmlFor="aluno">Aluno</FormLabel>
           <Input
             placeholder="Filtrar por Aluno"
+            border="0.5px solid gray"
             name="aluno"
             onChange={handleFilterChange}
             value={filterData.aluno}
@@ -69,6 +70,7 @@ function Filter() {
           <FormLabel htmlFor="turma">Turma</FormLabel>
           <Input
             placeholder="Filtrar por Turma"
+            border="0.5px solid gray"
             name="turma"
             onChange={handleFilterChange}
             value={filterData.turma}
@@ -81,6 +83,7 @@ function Filter() {
           <FormLabel htmlFor="dataFalta">Data da Falta</FormLabel>
           <Input
             placeholder="Filtrar por Data da Falta"
+            border="0.5px solid gray"
             name="dataFalta"
             onChange={handleFilterChange}
             value={filterData.dataFalta}
@@ -93,6 +96,7 @@ function Filter() {
           <FormLabel htmlFor="totalFaltas">Total de Faltas</FormLabel>
           <Input
             placeholder="Filtrar por Total de Faltas"
+            border="0.5px solid gray"
             name="totalFaltas"
             onChange={handleFilterChange}
             value={filterData.totalFaltas}
