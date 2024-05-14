@@ -42,13 +42,24 @@ const Header = () => {
           <ChakraLink
             as={Link}
             to="/relatorios"
-            mr="10rem"
+            mr="3rem"
             color="white"
             textTransform="uppercase"
             _hover={{ textDecoration: 'underline' }}
             _focus={{ outline: 'none' }}
           >
             Relatórios
+          </ChakraLink>
+          <ChakraLink
+            as={Link}
+            to="/listaAlunos"
+            mr="10rem"
+            color="white"
+            textTransform="uppercase"
+            _hover={{ textDecoration: 'underline' }}
+            _focus={{ outline: 'none' }}
+          >
+            Lista de Alunos
           </ChakraLink>
         </Flex>
         <IconButton

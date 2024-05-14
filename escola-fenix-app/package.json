@@ -1,7 +1,6 @@
 {
   "name": "escola-fenix-app",
   "version": "0.1.0",
-  "homepage": "https://BecaRebecaRe.github.io/Escola-Fenix",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",

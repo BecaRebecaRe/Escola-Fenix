@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { Box, Heading, Table, Thead, Tbody, Tr, Th, Td, Button, Icon, Input, Flex, Select} from '@chakra-ui/react';
+import { Box, Heading, Table, Thead, Tbody, Tr, Th, Td, Button, Icon } from '@chakra-ui/react';
 import { MdFileDownload, MdCancel } from 'react-icons/md';
 import Header from '../components/header';
 import TableHeader from '../components/tableHeader';
@@ -39,50 +40,50 @@ function Relatorios() {
       <Box bg="gray.100" padding={50} minH="100vh">
         <Heading as="h1" size="xl" mb="6" textAlign="left">Relatórios de Faltas</Heading>
         <Box>
-        <TableHeader 
-          filters={<Filter onSubmit={console.log("teste filtro")} />}
-          tableName="Tabela de Faltas"
-          haveDownload
-          haveFilter
-        />
-        <Table variant="striped" colorScheme="dark gray" size="md">
-          <Thead>
-            <Tr>
-              <Th>Aluno</Th>
-              <Th>Turma</Th>
-              <Th>Data da Falta</Th>
-              <Th>Total de Faltas</Th>
-              <Th>Ações</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {haveFilter ? filteredFaltas().map(({ id, aluno, turma, data, totalFaltas }) => (
-              <Tr key={id}>
-                <Td>{aluno}</Td>
-                <Td>{turma}</Td>
-                <Td>{data}</Td>
-                <Td>{totalFaltas}</Td>
-                <Td>
-                  <Button leftIcon={<Icon as={MdFileDownload} />} colorScheme="red" variant="solid" size="sm">
-                    Baixar
-                  </Button>
-                </Td>
+          <TableHeader
+            filters={<Filter onSubmit={console.log("teste filtro")} />}
+            tableName="Tabela de Faltas"
+            haveDownload
+            haveFilter
+          />
+          <Table variant="striped" colorScheme="dark gray" size="md">
+            <Thead>
+              <Tr>
+                <Th>Aluno</Th>
+                <Th>Turma</Th>
+                <Th>Data da Falta</Th>
+                <Th>Total de Faltas</Th>
+                <Th>Ações</Th>
               </Tr>
-            )) : faltas.map(({ id, aluno, turma, data, totalFaltas }) => (
-              <Tr key={id}>
-                <Td>{aluno}</Td>
-                <Td>{turma}</Td>
-                <Td>{data}</Td>
-                <Td>{totalFaltas}</Td>
-                <Td>
-                  <Button leftIcon={<Icon as={MdCancel} />} colorScheme="red" variant="solid" size="sm">
-                    Remover Falta
-                  </Button>
-                </Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
+            </Thead>
+            <Tbody>
+              {haveFilter ? filteredFaltas().map(({ id, aluno, turma, data, totalFaltas }) => (
+                <Tr key={id}>
+                  <Td>{aluno}</Td>
+                  <Td>{turma}</Td>
+                  <Td>{data}</Td>
+                  <Td>{totalFaltas}</Td>
+                  <Td>
+                    <Button leftIcon={<Icon as={MdFileDownload} />} colorScheme="red" variant="solid" size="sm">
+                      Baixar
+                    </Button>
+                  </Td>
+                </Tr>
+              )) : faltas.map(({ id, aluno, turma, data, totalFaltas }) => (
+                <Tr key={id}>
+                  <Td>{aluno}</Td>
+                  <Td>{turma}</Td>
+                  <Td>{data}</Td>
+                  <Td>{totalFaltas}</Td>
+                  <Td>
+                    <Button leftIcon={<Icon as={MdCancel} />} colorScheme="red" variant="solid" size="sm">
+                      Remover Falta
+                    </Button>
+                  </Td>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
         </Box>
       </Box>
     </>
